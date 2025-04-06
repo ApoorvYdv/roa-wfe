@@ -1,0 +1,278 @@
+.layout-container {
+    @include layout(column);
+    height: 100vh;
+    max-width: 100vw;
+    .layout-main {
+      @include layout(column);
+      // margin-top: $topbar-height;
+      .layout-section {
+        padding: 0px 0px 15px 0px;
+        padding-top: 0px;
+        @include layout(row);
+        flex: 1;
+        min-height: calc(100vh - 65px);
+        position: relative;
+        @include mobileview {
+          @include layout(column, stretch);
+        }
+        .layout-left {
+          width: 80px;
+          height: calc(100vh - 65px);
+          position: fixed;
+          z-index: 20;
+          transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  
+          &-opened {
+            width: 300px;
+          }
+        }
+        .shadow-sidebar {
+          width: 80px;
+          height: calc(100vh - 65px);
+          flex-shrink: 0;
+          transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  
+          &-opened {
+            width: 300px;
+          }
+  
+        }
+        .main-container {
+          flex: 1;
+          min-width: 0; // Add this to prevent flex item overflow
+          position: relative;
+
+        }
+        .layout-section-main {
+          @include layout(column);
+          padding: 0 1rem;
+          padding-left: 89px;
+
+          width: 100%;
+          height: 100%;
+          transition: padding 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+          &-body {
+            @include layout();
+            gap: 20px;
+            padding-top: 1rem;
+          }
+          .filter-bar {
+            z-index: 2;
+            background-color: $light-color;
+            position: -webkit-sticky;
+  
+            position: sticky;
+            top: calc($topbar-height);
+            @include mobileview {
+              position: relative;
+              top: 0px;
+            }
+            .mobile-search {
+              @include layout(row);
+              gap: 5px;
+              padding: 20px 20px 0px 20px;
+              align-items: center;
+            }
+          }
+        }
+        .status-filters-section {
+          .type-section {
+            position: -webkit-sticky;
+            position: sticky;
+            max-height: 70vh;
+            overflow-y: auto;
+            // overflow-y: scroll;
+            top: calc($topbar-height + 85px);
+            &.transactions-status {
+              top: calc($topbar-height + 66px);
+            }
+            width: 260px;
+            height: fit-content;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: $primary-color;
+  
+            @include layout(column);
+            gap: 30px;
+            // box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+            border-radius: 10px;
+            .section {
+              @include layout(column);
+              gap: 8px;
+              .section-top {
+                @include layout(row, space-between);
+                .header {
+                  @include font-props(600, $font-size-5, $dark-color);
+                }
+                .clear-all {
+                  @include font-props(400, $font-size-5, $secondary-color);
+                }
+              }
+              .drop-down-div {
+                @include layout(row);
+                align-items: center;
+                border: 1px solid #dddddd;
+                &:hover {
+                  border: 1px solid #1677ff;
+                }
+                &:focus-within {
+                  border: 1px solid #1677ff;
+                }
+                width: 100%;
+                // min-width: 640px;
+                height: 50px;
+                border-radius: 10px;
+                padding: $padding-large $padding-medium;
+                padding: $padding-large $padding-medium;
+                &.small {
+                  width: 100%;
+                  // min-width: 200px;
+                  padding: $padding-large $padding-large;
+                  position: relative;
+                  .drop-down-label {
+                    @include typography-header(500, 12px, #5c5c5c);
+                    padding: 0px 5px;
+                    background-color: #fff;
+                    position: absolute;
+                    top: -10px;
+                    left: 10px;
+                  }
+                }
+  
+                .form-control-text {
+                  @include typography-header(500, 14px, #5c5c5c);
+                }
+                @include layout(row, flex-start);
+                align-items: center;
+                gap: 1rem;
+                @include typography-header(400, 14px, #5c5c5c);
+  
+                .choose {
+                  width: 17%;
+                  &.small {
+                    width: 90px;
+                  }
+                  &.medium {
+                    width: 135px;
+                  }
+                  &.big {
+                    width: 180px;
+                  }
+                  &.large {
+                    width: 225px;
+                  }
+                  position: relative;
+                  @include layout();
+                  align-items: center;
+                  .clear-button {
+                    height: 20px;
+                  }
+                  .dropdown {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    @include typography-header(400, 14px, #5c5c5c);
+                  }
+                }
+  
+                .line {
+                  width: 2px;
+                  height: 100%;
+                  background: $all-lines;
+                }
+  
+                .search {
+                  @include layout(row, flex-start);
+                  gap: 1rem;
+                  flex: 1;
+                  .icon {
+                    width: 30px;
+                    height: 30px;
+                  }
+                  &.restrict-width {
+                    max-width: 200px;
+                  }
+                  .search-input {
+                    width: 100%;
+                    @include font-props(500, 16px, black);
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                    background: transparent;
+                    &.small-font {
+                      @include font-props(400, $font-size-5, #5c5c5c);
+                    }
+            }
+                  .search-input::placeholder {
+                    @include typography-header(500, 16px, #5c5c5c);
+                  }
+                  .small-font::placeholder {
+                    @include font-props(400, $font-size-5, #5c5c5c);
+                  }
+                }
+              }
+              .section-centred {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+              }
+            }
+  
+            .status-checkbox {
+              @include layout(row);
+              align-items: flex-start;
+              gap: 5px;
+              .value {
+                @include font-props(500, 13px, $secondary-color);
+              }
+            }
+            @include loader();
+            .status-checkbox-group {
+              @include layout(column, center);
+              align-items: flex-start;
+              gap: 5px;
+              .status-checkbox {
+                @include layout(row);
+                align-items: flex-start;
+                gap: 5px;
+                .value {
+                  @include font-props(500, 13px, $secondary-color);
+                }
+              }
+              .status-sub-checkbox {
+                @include layout(row);
+                align-items: flex-start;
+                padding-left: 20px;
+                gap: 5px;
+                .value {
+                  @include font-props(500, 13px, $secondary-color);
+                }
+              }
+            }
+            .apply-button {
+              text-transform: none;
+              background-color: $success-color;
+              &:hover {
+                background-color: $success-color-2;
+              }
+              @include font-props(500, $font-size-5, $light-color);
+            }
+          }
+        }
+  
+        .hidden {
+          display: none;
+        }
+        // padding-right: 20px;
+        // padding-left: 20px;
+      }
+      .pagination {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+    }
+  }

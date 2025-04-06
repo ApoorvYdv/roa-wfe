@@ -1,0 +1,9 @@
+.action-register-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: $spacing-sm;
+    padding: $spacing-lg;
+}

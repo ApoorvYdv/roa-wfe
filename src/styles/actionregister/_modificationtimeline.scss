@@ -1,0 +1,25 @@
+/* ModificationTimeline.css */
+.modification-timeline {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Poppins";
+  }
+  
+  .date-group {
+    margin-bottom: 32px;
+  }
+  
+  .date-header {
+    color: #21457c;
+    font-size: 1.375rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E0E0E0;
+  }
+  
+  .modifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }

@@ -1,0 +1,111 @@
+.case-modification-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .case-modification-card:hover {
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E0E0E0;
+  }
+  
+  .case-number {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #11142D;
+  }
+  
+  .case-code {
+    font-size: 0.875rem;
+    background: #21457c;
+    color: #ffffff;
+    padding: 5px 7px;
+    border-radius: 4px;
+  }
+  
+  .action-text {
+    font-size: 1rem;
+    color: #3F4155;
+    margin-bottom: 16px;
+  }
+  
+  .modifications-container {
+    background: #EBEBEB;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .modification-item {
+    display: flex;
+    margin-bottom: 8px;
+  }
+  
+  .modification-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .modification-label {
+    font-weight: 600;
+    color: #11142D;
+    min-width: 120px;
+  }
+  
+  .modification-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+    color: #808080;
+  }
+  
+  .old-value {
+    text-decoration: line-through;
+    color: #ed5565;
+    margin-right: 8px;
+  }
+  
+  .new-value {
+    color: #06b58c;
+  }
+  
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #6B7886;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 0.64rem;
+    font-weight: 500;
+  }
+  
+  .status-active {
+    background: rgba(6, 181, 140, 0.1);
+    color: #098d6e;
+  }
+  
+  .status-inactive {
+    background: rgba(237, 85, 101, 0.1);
+    color: #d6464e;
+  }
+  
+  .timestamp {
+    font-size: 0.75rem;
+    color: #888888;
+  }

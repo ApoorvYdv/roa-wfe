@@ -1,0 +1,5 @@
+{
+    "apiEndpoint": "http://localhost:8888",
+    "userPoolClientId": "",
+    "userPoolId": ""
+  }
